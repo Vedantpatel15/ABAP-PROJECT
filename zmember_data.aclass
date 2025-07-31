@@ -1,0 +1,118 @@
+CLASS zmember_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zmember_data IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+  DATA lt_members TYPE STANDARD TABLE OF zmember_library.
+  DATA ls_member TYPE zmember_library.
+
+    ls_member-member_id = 'M001'.
+    ls_member-first_name = 'Dhvani'.
+    ls_member-last_name  = 'Chavda'.
+    ls_member-email      = 'dhvani@example.com'.
+    ls_member-phone      = '9876543210'.
+    ls_member-join_date  = sy-datum - 50.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M002'.
+    ls_member-first_name = 'Ravi'.
+    ls_member-last_name  = 'Patel'.
+    ls_member-email      = 'ravi@example.com'.
+    ls_member-phone      = '9823456789'.
+    ls_member-join_date  = sy-datum - 40.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M003'.
+    ls_member-first_name = 'Anjali'.
+    ls_member-last_name  = 'Mehta'.
+    ls_member-email      = 'anjali@example.com'.
+    ls_member-phone      = '9797979797'.
+    ls_member-join_date  = sy-datum - 35.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M004'.
+    ls_member-first_name = 'Karan'.
+    ls_member-last_name  = 'Desai'.
+    ls_member-email      = 'karan@example.com'.
+    ls_member-phone      = '9123456780'.
+    ls_member-join_date  = sy-datum - 30.
+    ls_member-status     = 'Blocked'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M005'.
+    ls_member-first_name = 'Meera'.
+    ls_member-last_name  = 'Shah'.
+    ls_member-email      = 'meera@example.com'.
+    ls_member-phone      = '9811111111'.
+    ls_member-join_date  = sy-datum - 28.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M006'.
+    ls_member-first_name = 'Rohit'.
+    ls_member-last_name  = 'Kapoor'.
+    ls_member-email      = 'rohit@example.com'.
+    ls_member-phone      = '9765432100'.
+    ls_member-join_date  = sy-datum - 20.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M007'.
+    ls_member-first_name = 'Sneha'.
+    ls_member-last_name  = 'Iyer'.
+    ls_member-email      = 'sneha@example.com'.
+    ls_member-phone      = '9638527410'.
+    ls_member-join_date  = sy-datum - 18.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M008'.
+    ls_member-first_name = 'Amit'.
+    ls_member-last_name  = 'Joshi'.
+    ls_member-email      = 'amit@example.com'.
+    ls_member-phone      = '9123451234'.
+    ls_member-join_date  = sy-datum - 10.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M009'.
+    ls_member-first_name = 'Pooja'.
+    ls_member-last_name  = 'Rana'.
+    ls_member-email      = 'pooja@example.com'.
+    ls_member-phone      = '9988776655'.
+    ls_member-join_date  = sy-datum - 5.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    ls_member-member_id = 'M010'.
+    ls_member-first_name = 'Jay'.
+    ls_member-last_name  = 'Patel'.
+    ls_member-email      = 'jay@example.com'.
+    ls_member-phone      = '9900990099'.
+    ls_member-join_date  = sy-datum.
+    ls_member-status     = 'Active'.
+    APPEND ls_member TO lt_members.
+
+    INSERT zmember_library FROM TABLE @lt_members.
+    COMMIT WORK.
+    out->write( |Member data inserted successfully.| ).
+
+  ENDMETHOD.
+ENDCLASS.

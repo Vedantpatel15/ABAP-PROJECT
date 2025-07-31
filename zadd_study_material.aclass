@@ -1,0 +1,240 @@
+CLASS zadd_study_material DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+CLASS zadd_study_material IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+    DATA: ls_material TYPE zstudy_material,
+          lt_material TYPE STANDARD TABLE OF zstudy_material.
+
+    " Dataset 1 to 20
+    ls_material-mat_id    = 'MAT101'.
+    ls_material-title     = 'AI Notes'.
+    ls_material-subject   = 'Artificial Intelligence'.
+    ls_material-file_name = 'ai_notes.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url  = 'http://college.edu/ai_notes.pdf'.
+    ls_material-dept_id   = 'CSE01'.
+    ls_material-semester  = '01'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT102'.
+    ls_material-title = 'ML Handbook'.
+    ls_material-subject = 'Machine Learning'.
+    ls_material-file_name = 'ml_handbook.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/ml_handbook.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '02'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT103'.
+    ls_material-title = 'Web Dev'.
+    ls_material-subject = 'Web Technologies'.
+    ls_material-file_name = 'web_dev.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/web_dev.pdf'.
+    ls_material-dept_id = 'CSE02'.
+    ls_material-semester = '03'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT104'.
+    ls_material-title = 'SAP Guide'.
+    ls_material-subject = 'SAP Basics'.
+    ls_material-file_name = 'sap_guide.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/sap_guide.pdf'.
+    ls_material-dept_id = 'IT01'.
+    ls_material-semester = '04'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT105'.
+    ls_material-title = 'Python Basics'.
+    ls_material-subject = 'Python'.
+    ls_material-file_name = 'python_basics.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/python_basics.pdf'.
+    ls_material-dept_id = 'IT02'.
+    ls_material-semester = '01'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT106'.
+    ls_material-title = 'DBMS Notes'.
+    ls_material-subject = 'Database Management'.
+    ls_material-file_name = 'dbms_notes.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/dbms_notes.pdf'.
+    ls_material-dept_id = 'CSE02'.
+    ls_material-semester = '02'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT107'.
+    ls_material-title = 'Data Structures'.
+    ls_material-subject = 'DSA'.
+    ls_material-file_name = 'data_structures.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/data_structures.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '03'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT108'.
+    ls_material-title = 'Java Handbook'.
+    ls_material-subject = 'Java Programming'.
+    ls_material-file_name = 'java_handbook.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/java_handbook.pdf'.
+    ls_material-dept_id = 'IT01'.
+    ls_material-semester = '04'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT109'.
+    ls_material-title = 'Cloud Notes'.
+    ls_material-subject = 'Cloud Computing'.
+    ls_material-file_name = 'cloud_notes.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/cloud_notes.pdf'.
+    ls_material-dept_id = 'IT02'.
+    ls_material-semester = '05'.
+    APPEND ls_material TO lt_material.
+
+    ls_material-mat_id = 'MAT110'.
+    ls_material-title = 'Networking Basics'.
+    ls_material-subject = 'Computer Networks'.
+    ls_material-file_name = 'networking_basics.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/networking_basics.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '06'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 11
+    ls_material-mat_id = 'MAT111'.
+    ls_material-title = 'OS Concepts'.
+    ls_material-subject = 'Operating Systems'.
+    ls_material-file_name = 'os_concepts.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/os_concepts.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '01'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 12
+    ls_material-mat_id = 'MAT112'.
+    ls_material-title = 'Compiler Design'.
+    ls_material-subject = 'Compiler'.
+    ls_material-file_name = 'compiler_design.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/compiler_design.pdf'.
+    ls_material-dept_id = 'CSE02'.
+    ls_material-semester = '02'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 13
+    ls_material-mat_id = 'MAT113'.
+    ls_material-title = 'Cyber Security'.
+    ls_material-subject = 'Security'.
+    ls_material-file_name = 'cyber_security.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/cyber_security.pdf'.
+    ls_material-dept_id = 'IT01'.
+    ls_material-semester = '03'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 14
+    ls_material-mat_id = 'MAT114'.
+    ls_material-title = 'IOT Notes'.
+    ls_material-subject = 'Internet of Things'.
+    ls_material-file_name = 'iot_notes.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/iot_notes.pdf'.
+    ls_material-dept_id = 'IT02'.
+    ls_material-semester = '04'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 15
+    ls_material-mat_id = 'MAT115'.
+    ls_material-title = 'Big Data Guide'.
+    ls_material-subject = 'Big Data'.
+    ls_material-file_name = 'big_data.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/big_data.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '05'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 16
+    ls_material-mat_id = 'MAT116'.
+    ls_material-title = 'HCI Concepts'.
+    ls_material-subject = 'Human Computer Interaction'.
+    ls_material-file_name = 'hci.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/hci.pdf'.
+    ls_material-dept_id = 'CSE02'.
+    ls_material-semester = '06'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 17
+    ls_material-mat_id = 'MAT117'.
+    ls_material-title = 'Ethical Hacking'.
+    ls_material-subject = 'Security'.
+    ls_material-file_name = 'ethical_hacking.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/ethical_hacking.pdf'.
+    ls_material-dept_id = 'IT01'.
+    ls_material-semester = '01'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 18
+    ls_material-mat_id = 'MAT118'.
+    ls_material-title = 'Blockchain Intro'.
+    ls_material-subject = 'Blockchain'.
+    ls_material-file_name = 'blockchain.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/blockchain.pdf'.
+    ls_material-dept_id = 'IT02'.
+    ls_material-semester = '02'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 19
+    ls_material-mat_id = 'MAT119'.
+    ls_material-title = 'Quantum Comp'.
+    ls_material-subject = 'Quantum Computing'.
+    ls_material-file_name = 'quantum_comp.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/quantum_comp.pdf'.
+    ls_material-dept_id = 'CSE01'.
+    ls_material-semester = '03'.
+    APPEND ls_material TO lt_material.
+
+    " Dataset 20
+    ls_material-mat_id = 'MAT120'.
+    ls_material-title = 'Advanced Java'.
+    ls_material-subject = 'Java'.
+    ls_material-file_name = 'adv_java.pdf'.
+    ls_material-file_content_type = 'PDF'.
+    ls_material-file_url = 'http://college.edu/adv_java.pdf'.
+    ls_material-dept_id = 'CSE02'.
+    ls_material-semester = '04'.
+    APPEND ls_material TO lt_material.
+
+    " Delete existing and insert new
+    DELETE FROM zstudy_material.
+
+    TRY.
+        INSERT zstudy_material FROM TABLE @lt_material.
+        COMMIT WORK.
+        out->write( |{ lines( lt_material ) } records inserted successfully.| ).
+      CATCH cx_sy_open_sql_db INTO DATA(lx_sql).
+        out->write( |Insert error: { lx_sql->get_text( ) }| ).
+    ENDTRY.
+
+  ENDMETHOD.
+
+ENDCLASS.

@@ -1,0 +1,19 @@
+@EndUserText.label : 'Stores book details'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zbook {
+
+  key client       : abap.clnt not null;
+  key book_id      : abap.char(10) not null;
+  title            : abap.char(100);
+  author           : abap.char(50);
+  publisher        : abap.char(50);
+  genre            : abap.char(30);
+  language         : abap.char(20);
+  total_copies     : abap.int4;
+  available_copies : abap.int4;
+  price            : abap.dec(6,2);
+
+}

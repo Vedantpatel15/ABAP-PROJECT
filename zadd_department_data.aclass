@@ -1,0 +1,95 @@
+CLASS zadd_department_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zadd_department_data IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA: lt_dept TYPE STANDARD TABLE OF zdepartment,
+          ls_dept TYPE zdepartment.
+
+    " Prepare demo entries
+    ls_dept-client    = sy-mandt.
+    ls_dept-dept_id   = 'CSE'.
+    ls_dept-dept_name = 'Computer Science & Engineering'.
+    ls_dept-dept_code = 101.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'CSD'.
+    ls_dept-dept_name = 'Computer Science & Design'.
+    ls_dept-dept_code = 102.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'ECE'.
+    ls_dept-dept_name = 'Electronics & Communication Engg.'.
+    ls_dept-dept_code = 103.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'MECH'.
+    ls_dept-dept_name = 'Mechanical Engineering'.
+    ls_dept-dept_code = 104.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'CIVIL'.
+    ls_dept-dept_name = 'Civil Engineering'.
+    ls_dept-dept_code = 105.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'EE'.
+    ls_dept-dept_name = 'Electrical Engineering'.
+    ls_dept-dept_code = 106.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'CHEM'.
+    ls_dept-dept_name = 'Chemical Engineering'.
+    ls_dept-dept_code = 107.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'IT'.
+    ls_dept-dept_name = 'Information Technology'.
+    ls_dept-dept_code = 108.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'BIOTECH'.
+    ls_dept-dept_name = 'Biotechnology'.
+    ls_dept-dept_code = 109.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'MBA'.
+    ls_dept-dept_name = 'Master of Business Administration'.
+    ls_dept-dept_code = 110.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'MCA'.
+    ls_dept-dept_name = 'Master of Computer Applications'.
+    ls_dept-dept_code = 111.
+    APPEND ls_dept TO lt_dept.
+
+    ls_dept-dept_id   = 'BCA'.
+    ls_dept-dept_name = 'Bachelor of Computer Applications'.
+    ls_dept-dept_code = 112.
+    APPEND ls_dept TO lt_dept.
+
+    " Optional: Clear table first (for test/demo purposes)
+    DELETE FROM zdepartment.
+
+    " Insert data
+    TRY.
+        INSERT zdepartment FROM TABLE @lt_dept.
+        COMMIT WORK.
+        out->write( |{ lines( lt_dept ) } records inserted successfully.| ).
+      CATCH cx_sy_open_sql_db INTO DATA(lx_sql).
+        out->write( |Insert error: { lx_sql->get_text( ) }| ).
+    ENDTRY.
+
+  ENDMETHOD.
+
+ENDCLASS.

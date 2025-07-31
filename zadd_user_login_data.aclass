@@ -1,0 +1,176 @@
+CLASS zadd_user_login_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zadd_user_login_data IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+
+   DATA: ls_user_login TYPE zuser_login,
+          lt_user_login TYPE STANDARD TABLE OF zuser_login.
+
+      ls_user_login-client     = sy-mandt.
+    ls_user_login-user_id    = 'FAC001'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Asha@123'.
+    ls_user_login-last_login = '20250729'.
+    ls_user_login-email      = 'asha.mehta@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC002'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Rajesh@123'.
+    ls_user_login-last_login = '20250706'.
+    ls_user_login-email      = 'rajesh.sharma@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC003'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Kavita@123'.
+    ls_user_login-last_login = '20250713'.
+    ls_user_login-email      = 'kavita.patel@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC004'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Amit@123'.
+    ls_user_login-last_login = '20250727'.
+    ls_user_login-email      = 'amit.desai@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC005'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Sneha@123'.
+    ls_user_login-last_login = '20250718'.
+    ls_user_login-email      = 'sneha.verma@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC006'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Prashant@123'.
+    ls_user_login-last_login = '20250706'.
+    ls_user_login-email      = 'prashant.thakur@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC007'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Nidhi@123'.
+    ls_user_login-last_login = '20250728'.
+    ls_user_login-email      = 'nidhi.joshi@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC008'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Manish@123'.
+    ls_user_login-last_login = '20250723'.
+    ls_user_login-email      = 'manish.gupta@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC009'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Priya@123'.
+    ls_user_login-last_login = '20250723'.
+    ls_user_login-email      = 'priya.shah@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'FAC010'.
+    ls_user_login-role       = 'FACULTY'.
+    ls_user_login-password   = 'Anil@123'.
+    ls_user_login-last_login = '20250717'.
+    ls_user_login-email      = 'anil.rathod@college.edu'.
+    APPEND ls_user_login TO lt_user_login.
+
+    " 10 Student Records
+    ls_user_login-user_id    = 'S001'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Aarav@123'.
+    ls_user_login-last_login = '20250722'.
+    ls_user_login-email      = 'aarav.shah@example.com'..
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S002'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Nisha@123'.
+    ls_user_login-last_login = '20250707'.
+    ls_user_login-email      = 'nisha.patel@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S003'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Yash@123'.
+    ls_user_login-last_login = '20250711'.
+    ls_user_login-email      = 'yash.mehta@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S004'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Riya@123'.
+    ls_user_login-last_login = '20250710'.
+    ls_user_login-email      = 'riya.shah@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S005'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Karan@123'.
+    ls_user_login-last_login = '20250718'.
+    ls_user_login-email      = 'karan.desai@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S006'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Pooja@123'.
+    ls_user_login-last_login = '20250726'.
+    ls_user_login-email      = 'pooja.raval@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S007'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Ankit@123'.
+    ls_user_login-last_login = '20250712'.
+    ls_user_login-email      = 'ankit.shah@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S008'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Snaha@123'.
+    ls_user_login-last_login = '20250720'.
+    ls_user_login-email      = 'sneha.patel@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S009'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Rahul@123'.
+    ls_user_login-last_login = '20250709'.
+    ls_user_login-email      = 'rahul.joshi@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    ls_user_login-user_id    = 'S010'.
+    ls_user_login-role       = 'STUDENT'.
+    ls_user_login-password   = 'Meena@123'.
+    ls_user_login-last_login = '20250716'.
+    ls_user_login-email      = 'meena.goyal@example.com'.
+    APPEND ls_user_login TO lt_user_login.
+
+    DELETE FROM zuser_login.
+
+    " Insert all entries
+     TRY.
+        INSERT zuser_login FROM TABLE @lt_user_login.
+        COMMIT WORK.
+        out->write( |{ lines( lt_user_login ) } records inserted successfully.| ).
+      CATCH cx_sy_open_sql_db INTO DATA(lx_sql).
+        out->write( |Insert error: { lx_sql->get_text( ) }| ).
+    ENDTRY.
+
+
+  ENDMETHOD.
+ENDCLASS.

@@ -1,0 +1,17 @@
+@EndUserText.label : 'Member address details'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zmember_address {
+
+  key client    : abap.clnt not null;
+  key member_id : abap.char(10) not null;
+  address_type  : abap.char(10);
+  street        : abap.char(100);
+  city          : abap.char(50);
+  state         : abap.char(50);
+  postal_code   : abap.char(10);
+  country       : abap.char(3);
+
+}

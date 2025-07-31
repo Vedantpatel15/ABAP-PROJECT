@@ -1,0 +1,138 @@
+CLASS zbook_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zbook_data IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+   DATA lt_books TYPE STANDARD TABLE OF zbook.
+   DATA ls_book  TYPE zbook.
+
+   ls_book-book_id = 'B001'.
+    ls_book-title = 'To Kill a Mockingbird'.
+    ls_book-author = 'Harper Lee'.
+    ls_book-publisher = 'J.B. Lippincott & Co.'.
+    ls_book-genre = 'Fiction'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 8.
+    ls_book-available_copies = 6.
+    ls_book-price = '350.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B002'.
+    ls_book-title = '1984'.
+    ls_book-author = 'George Orwell'.
+    ls_book-publisher = 'Secker & Warburg'.
+    ls_book-genre = 'Dystopian'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 6.
+    ls_book-available_copies = 4.
+    ls_book-price = '320.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B003'.
+    ls_book-title = 'The Alchemist'.
+    ls_book-author = 'Paulo Coelho'.
+    ls_book-publisher = 'HarperOne'.
+    ls_book-genre = 'Adventure'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 10.
+    ls_book-available_copies = 9.
+    ls_book-price = '299.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B004'.
+    ls_book-title = 'The Diary of a Young Girl'.
+    ls_book-author = 'Anne Frank'.
+    ls_book-publisher = 'Contact Publishing'.
+    ls_book-genre = 'Biography'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 5.
+    ls_book-available_copies = 5.
+    ls_book-price = '275.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B005'.
+    ls_book-title = 'Pride and Prejudice'.
+    ls_book-author = 'Jane Austen'.
+    ls_book-publisher = 'T. Egerton'.
+    ls_book-genre = 'Romance'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 7.
+    ls_book-available_copies = 6.
+    ls_book-price = '340.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B006'.
+    ls_book-title = 'Wings of Fire'.
+    ls_book-author = 'A.P.J. Abdul Kalam'.
+    ls_book-publisher = 'Universities Press'.
+    ls_book-genre = 'Autobiography'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 9.
+    ls_book-available_copies = 7.
+    ls_book-price = '360.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B007'.
+    ls_book-title = 'The Great Gatsby'.
+    ls_book-author = 'F. Scott Fitzgerald'.
+    ls_book-publisher = 'Charles Scribner''s Sons'.
+    ls_book-genre = 'Classic'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 4.
+    ls_book-available_copies = 2.
+    ls_book-price = '310.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B008'.
+    ls_book-title = 'The Kite Runner'.
+    ls_book-author = 'Khaled Hosseini'.
+    ls_book-publisher = 'Riverhead Books'.
+    ls_book-genre = 'Drama'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 6.
+    ls_book-available_copies = 5.
+    ls_book-price = '399.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B009'.
+    ls_book-title = 'A Brief History of Time'.
+    ls_book-author = 'Stephen Hawking'.
+    ls_book-publisher = 'Bantam Books'.
+    ls_book-genre = 'Science'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 5.
+    ls_book-available_copies = 3.
+    ls_book-price = '450.00'.
+    APPEND ls_book TO lt_books.
+
+    ls_book-book_id = 'B010'.
+    ls_book-title = 'The Secret'.
+    ls_book-author = 'Rhonda Byrne'.
+    ls_book-publisher = 'Atria Books'.
+    ls_book-genre = 'Self-help'.
+    ls_book-language = 'English'.
+    ls_book-total_copies = 7.
+    ls_book-available_copies = 6.
+    ls_book-price = '450.00'.
+    APPEND ls_book TO lt_books.
+
+    INSERT zbook FROM TABLE @lt_books.
+    COMMIT WORK.
+    out->write( |'General book data inserted successfully.' | ).
+
+  ENDMETHOD.
+ENDCLASS.

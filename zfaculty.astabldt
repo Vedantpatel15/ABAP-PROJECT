@@ -1,0 +1,20 @@
+@EndUserText.label : 'Faculty Data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zfaculty {
+
+  key client         : abap.clnt not null;
+  key faculty_id     : abap.char(10) not null;
+  name               : abap.char(100);
+  email              : abap.char(100);
+  phone              : abap.char(15);
+  dept_id            : abap.char(10);
+  designation        : abap.char(25);
+  createdby          : abp_creation_user;
+  changedby          : abp_lastchange_user;
+  lastchangedat      : abp_lastchange_tstmpl;
+  locallastchangedat : abp_locinst_lastchange_tstmpl;
+
+}

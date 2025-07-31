@@ -1,0 +1,28 @@
+CLASS zcl_aggregate_demo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_aggregate_demo IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+
+    SELECT dept_id, COUNT(*) AS student_count
+      FROM zstudent_1535
+      GROUP BY dept_id
+      INTO TABLE @DATA(aggregated_data).
+
+    LOOP AT aggregated_data INTO DATA(row).
+      out->write( row-dept_id ).
+      out->write( row-student_count ).
+    ENDLOOP.
+  ENDMETHOD.
+ENDCLASS.

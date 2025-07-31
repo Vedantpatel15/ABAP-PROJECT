@@ -1,0 +1,437 @@
+CLASS zadd_student_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zadd_student_data IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA: lt_student TYPE STANDARD TABLE OF zstudent_1535,
+          ls_student TYPE zstudent_1535.
+
+    " Clear the internal table to ensure clean start
+    CLEAR: lt_student, ls_student.
+
+    " Student S001
+    CLEAR ls_student.
+    ls_student-student_id    = 'S001'.
+    ls_student-name          = 'Aarav Shah'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020315'.
+    ls_student-email         = 'aarav.shah@example.com'.
+    ls_student-phone         = '9123456780'.
+    ls_student-enrollment_no = '202300000001'.
+    ls_student-dept_id       = 'CSE'.
+    ls_student-semester      = '01'.
+    APPEND ls_student TO lt_student.
+
+    " Student S002
+    CLEAR ls_student.
+    ls_student-student_id    = 'S002'.
+    ls_student-name          = 'Nisha Patel'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020610'.
+    ls_student-email         = 'nisha.patel@example.com'.
+    ls_student-phone         = '9123456781'.
+    ls_student-enrollment_no = '202300000002'.
+    ls_student-dept_id       = 'CSE'.
+    ls_student-semester      = '02'.
+    APPEND ls_student TO lt_student.
+
+    " Student S003
+    CLEAR ls_student.
+    ls_student-student_id    = 'S003'.
+    ls_student-name          = 'Yash Mehta'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20011201'.
+    ls_student-email         = 'yash.mehta@example.com'.
+    ls_student-phone         = '9123456782'.
+    ls_student-enrollment_no = '202300000003'.
+    ls_student-dept_id       = 'CSD'.
+    ls_student-semester      = '03'.
+    APPEND ls_student TO lt_student.
+
+    " Student S004
+    CLEAR ls_student.
+    ls_student-student_id    = 'S004'.
+    ls_student-name          = 'Riya Shah'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20010420'.
+    ls_student-email         = 'riya.shah@example.com'.
+    ls_student-phone         = '9123456783'.
+    ls_student-enrollment_no = '202300000004'.
+    ls_student-dept_id       = 'IT'.
+    ls_student-semester      = '04'.
+    APPEND ls_student TO lt_student.
+
+    " Student S005
+    CLEAR ls_student.
+    ls_student-student_id    = 'S005'.
+    ls_student-name          = 'Karan Desai'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20030228'.
+    ls_student-email         = 'karan.desai@example.com'.
+    ls_student-phone         = '9123456784'.
+    ls_student-enrollment_no = '202300000005'.
+    ls_student-dept_id       = 'MECH'.
+    ls_student-semester      = '05'.
+    APPEND ls_student TO lt_student.
+
+    " Student S006
+    CLEAR ls_student.
+    ls_student-student_id    = 'S006'.
+    ls_student-name          = 'Pooja Raval'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020115'.
+    ls_student-email         = 'pooja.raval@example.com'.
+    ls_student-phone         = '9123456785'.
+    ls_student-enrollment_no = '202300000006'.
+    ls_student-dept_id       = 'ECE'.
+    ls_student-semester      = '06'.
+    APPEND ls_student TO lt_student.
+
+    " Student S007
+    CLEAR ls_student.
+    ls_student-student_id    = 'S007'.
+    ls_student-name          = 'Ankit Shah'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020408'.
+    ls_student-email         = 'ankit.shah@example.com'.
+    ls_student-phone         = '9123456786'.
+    ls_student-enrollment_no = '202300000007'.
+    ls_student-dept_id       = 'CIVIL'.
+    ls_student-semester      = '07'.
+    APPEND ls_student TO lt_student.
+
+    " Student S008
+    CLEAR ls_student.
+    ls_student-student_id    = 'S008'.
+    ls_student-name          = 'Sneha Patel'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20030111'.
+    ls_student-email         = 'sneha.patel@example.com'.
+    ls_student-phone         = '9123456787'.
+    ls_student-enrollment_no = '202300000008'.
+    ls_student-dept_id       = 'MBA'.
+    ls_student-semester      = '08'.
+    APPEND ls_student TO lt_student.
+
+    " Student S009
+    CLEAR ls_student.
+    ls_student-student_id    = 'S009'.
+    ls_student-name          = 'Rahul Joshi'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20030506'.
+    ls_student-email         = 'rahul.joshi@example.com'.
+    ls_student-phone         = '9123456788'.
+    ls_student-enrollment_no = '202300000009'.
+    ls_student-dept_id       = 'EE'.
+    ls_student-semester      = '06'.
+    APPEND ls_student TO lt_student.
+
+    " Student S010
+    CLEAR ls_student.
+    ls_student-student_id    = 'S010'.
+    ls_student-name          = 'Meena Goyal'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020425'.
+    ls_student-email         = 'meena.goyal@example.com'.
+    ls_student-phone         = '9123456789'.
+    ls_student-enrollment_no = '202300000010'.
+    ls_student-dept_id       = 'CHEM'.
+    ls_student-semester      = '05'.
+    APPEND ls_student TO lt_student.
+
+    " Student S011
+    CLEAR ls_student.
+    ls_student-student_id    = 'S011'.
+    ls_student-name          = 'Jay Soni'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20021230'.
+    ls_student-email         = 'jay.soni@example.com'.
+    ls_student-phone         = '9123456790'.
+    ls_student-enrollment_no = '202300000011'.
+    ls_student-dept_id       = 'CSE'.
+    ls_student-semester      = '01'.
+    APPEND ls_student TO lt_student.
+
+    " Student S012
+    CLEAR ls_student.
+    ls_student-student_id    = 'S012'.
+    ls_student-name          = 'Kavya Trivedi'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20030611'.
+    ls_student-email         = 'kavya.trivedi@example.com'.
+    ls_student-phone         = '9123456791'.
+    ls_student-enrollment_no = '202300000012'.
+    ls_student-dept_id       = 'IT'.
+    ls_student-semester      = '02'.
+    APPEND ls_student TO lt_student.
+
+    " Student S013
+    CLEAR ls_student.
+    ls_student-student_id    = 'S013'.
+    ls_student-name          = 'Amit Solanki'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20011215'.
+    ls_student-email         = 'amit.solanki@example.com'.
+    ls_student-phone         = '9123456792'.
+    ls_student-enrollment_no = '202300000013'.
+    ls_student-dept_id       = 'MECH'.
+    ls_student-semester      = '03'.
+    APPEND ls_student TO lt_student.
+
+    " Student S014
+    CLEAR ls_student.
+    ls_student-student_id    = 'S014'.
+    ls_student-name          = 'Divya Nair'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20030301'.
+    ls_student-email         = 'divya.nair@example.com'.
+    ls_student-phone         = '9123456793'.
+    ls_student-enrollment_no = '202300000014'.
+    ls_student-dept_id       = 'ECE'.
+    ls_student-semester      = '04'.
+    APPEND ls_student TO lt_student.
+
+    " Student S015
+    CLEAR ls_student.
+    ls_student-student_id    = 'S015'.
+    ls_student-name          = 'Nirav Gandhi'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020520'.
+    ls_student-email         = 'nirav.gandhi@example.com'.
+    ls_student-phone         = '9123456794'.
+    ls_student-enrollment_no = '202300000015'.
+    ls_student-dept_id       = 'CIVIL'.
+    ls_student-semester      = '05'.
+    APPEND ls_student TO lt_student.
+
+    " Student S016
+    CLEAR ls_student.
+    ls_student-student_id    = 'S016'.
+    ls_student-name          = 'Ritika Chawla'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020418'.
+    ls_student-email         = 'ritika.chawla@example.com'.
+    ls_student-phone         = '9123456795'.
+    ls_student-enrollment_no = '202300000016'.
+    ls_student-dept_id       = 'MBA'.
+    ls_student-semester      = '06'.
+    APPEND ls_student TO lt_student.
+
+    " Student S017
+    CLEAR ls_student.
+    ls_student-student_id    = 'S017'.
+    ls_student-name          = 'Sahil Khan'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20030509'.
+    ls_student-email         = 'sahil.khan@example.com'.
+    ls_student-phone         = '9123456796'.
+    ls_student-enrollment_no = '202300000017'.
+    ls_student-dept_id       = 'EE'.
+    ls_student-semester      = '07'.
+    APPEND ls_student TO lt_student.
+
+    " Student S018
+    CLEAR ls_student.
+    ls_student-student_id    = 'S018'.
+    ls_student-name          = 'Isha Bhatt'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20010228'.
+    ls_student-email         = 'isha.bhatt@example.com'.
+    ls_student-phone         = '9123456797'.
+    ls_student-enrollment_no = '202300000018'.
+    ls_student-dept_id       = 'CHEM'.
+    ls_student-semester      = '08'.
+    APPEND ls_student TO lt_student.
+
+    " Student S019
+    CLEAR ls_student.
+    ls_student-student_id    = 'S019'.
+    ls_student-name          = 'Rohan Vyas'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020619'.
+    ls_student-email         = 'rohan.vyas@example.com'.
+    ls_student-phone         = '9123456798'.
+    ls_student-enrollment_no = '202300000019'.
+    ls_student-dept_id       = 'CSD'.
+    ls_student-semester      = '02'.
+    APPEND ls_student TO lt_student.
+
+    " Student S020
+    CLEAR ls_student.
+    ls_student-student_id    = 'S020'.
+    ls_student-name          = 'Neha Dubey'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20021002'.
+    ls_student-email         = 'neha.dubey@example.com'.
+    ls_student-phone         = '9123456799'.
+    ls_student-enrollment_no = '202300000020'.
+    ls_student-dept_id       = 'IT'.
+    ls_student-semester      = '03'.
+    APPEND ls_student TO lt_student.
+
+    " Student S021
+    CLEAR ls_student.
+    ls_student-student_id    = 'S021'.
+    ls_student-name          = 'Anushka Nair'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020321'.
+    ls_student-email         = 'anushka.nair@student.edu'.
+    ls_student-phone         = '9876543221'.
+    ls_student-enrollment_no = '202501000021'.
+    ls_student-dept_id       = 'CSE'.
+    ls_student-semester      = '05'.
+    APPEND ls_student TO lt_student.
+
+    " Student S022
+    CLEAR ls_student.
+    ls_student-student_id    = 'S022'.
+    ls_student-name          = 'Rajan Kumar'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020218'.
+    ls_student-email         = 'rajan.kumar@student.edu'.
+    ls_student-phone         = '9876543222'.
+    ls_student-enrollment_no = '202501000022'.
+    ls_student-dept_id       = 'IT'.
+    ls_student-semester      = '04'.
+    APPEND ls_student TO lt_student.
+
+    " Student S023
+    CLEAR ls_student.
+    ls_student-student_id    = 'S023'.
+    ls_student-name          = 'Megha Bhatt'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020411'.
+    ls_student-email         = 'megha.bhatt@student.edu'.
+    ls_student-phone         = '9876543223'.
+    ls_student-enrollment_no = '202501000023'.
+    ls_student-dept_id       = 'ECE'.
+    ls_student-semester      = '06'.
+    APPEND ls_student TO lt_student.
+
+    " Student S024
+    CLEAR ls_student.
+    ls_student-student_id    = 'S024'.
+    ls_student-name          = 'Dhruv Joshi'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020309'.
+    ls_student-email         = 'dhruv.joshi@student.edu'.
+    ls_student-phone         = '9876543224'.
+    ls_student-enrollment_no = '202501000024'.
+    ls_student-dept_id       = 'MECH'.
+    ls_student-semester      = '03'.
+    APPEND ls_student TO lt_student.
+
+    " Student S025
+    CLEAR ls_student.
+    ls_student-student_id    = 'S025'.
+    ls_student-name          = 'Tanvi Shah'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020127'.
+    ls_student-email         = 'tanvi.shah@student.edu'.
+    ls_student-phone         = '9876543225'.
+    ls_student-enrollment_no = '202501000025'.
+    ls_student-dept_id       = 'CIVIL'.
+    ls_student-semester      = '07'.
+    APPEND ls_student TO lt_student.
+
+    " Student S026
+    CLEAR ls_student.
+    ls_student-student_id    = 'S026'.
+    ls_student-name          = 'Nikhil Singh'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020514'.
+    ls_student-email         = 'nikhil.singh@student.edu'.
+    ls_student-phone         = '9876543226'.
+    ls_student-enrollment_no = '202501000026'.
+    ls_student-dept_id       = 'CHEM'.
+    ls_student-semester      = '02'.
+    APPEND ls_student TO lt_student.
+
+    " Student S027
+    CLEAR ls_student.
+    ls_student-student_id    = 'S027'.
+    ls_student-name          = 'Pooja Yadav'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020403'.
+    ls_student-email         = 'pooja.yadav@student.edu'.
+    ls_student-phone         = '9876543227'.
+    ls_student-enrollment_no = '202501000027'.
+    ls_student-dept_id       = 'BIOTECH'.
+    ls_student-semester      = '04'.
+    APPEND ls_student TO lt_student.
+
+    " Student S028
+    CLEAR ls_student.
+    ls_student-student_id    = 'S028'.
+    ls_student-name          = 'Vivek Choudhary'.
+    ls_student-gender        = 'M'.
+    ls_student-dob           = '20020105'.
+    ls_student-email         = 'vivek.choudhary@student.edu'.
+    ls_student-phone         = '9876543228'.
+    ls_student-enrollment_no = '202501000028'.
+    ls_student-dept_id       = 'EE'.
+    ls_student-semester      = '06'.
+    APPEND ls_student TO lt_student.
+
+    " Student S029
+    CLEAR ls_student.
+    ls_student-student_id    = 'S029'.
+    ls_student-name          = 'Neha Kapoor'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020209'.
+    ls_student-email         = 'neha.kapoor@student.edu'.
+    ls_student-phone         = '9876543229'.
+    ls_student-enrollment_no = '202501000029'.
+    ls_student-dept_id       = 'CSD'.
+    ls_student-semester      = '08'.
+    APPEND ls_student TO lt_student.
+
+    " Student S030
+    CLEAR ls_student.
+    ls_student-student_id    = 'S030'.
+    ls_student-name          = 'Zoya Sheikh'.
+    ls_student-gender        = 'F'.
+    ls_student-dob           = '20020301'.
+    ls_student-email         = 'zoya.sheikh@student.edu'.
+    ls_student-phone         = '9876543230'.
+    ls_student-enrollment_no = '202501000030'.
+    ls_student-dept_id       = 'MBA'.
+    ls_student-semester      = '01'.
+    APPEND ls_student TO lt_student.
+
+DELETE FROM zstudent_1535.
+    " Insert data into database table
+    IF lines( lt_student ) > 0.
+      TRY.
+          INSERT zstudent_1535 FROM TABLE @lt_student.
+          IF sy-subrc = 0.
+            COMMIT WORK.
+            out->write( |{ lines( lt_student ) } student records inserted successfully.| ).
+          ELSE.
+            ROLLBACK WORK.
+            out->write( |Insert failed with return code: { sy-subrc }| ).
+          ENDIF.
+        CATCH cx_sy_open_sql_db INTO DATA(lx_sql).
+          ROLLBACK WORK.
+          out->write( |Database error occurred: { lx_sql->get_text( ) }| ).
+        CATCH cx_root INTO DATA(lx_root).
+          ROLLBACK WORK.
+          out->write( |Unexpected error occurred: { lx_root->get_text( ) }| ).
+      ENDTRY.
+    ELSE.
+      out->write( |No student data to insert.| ).
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.

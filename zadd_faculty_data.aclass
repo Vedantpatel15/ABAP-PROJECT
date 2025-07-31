@@ -1,0 +1,112 @@
+CLASS zadd_faculty_data DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zadd_faculty_data IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA: lt_faculty TYPE STANDARD TABLE OF zfaculty,
+          ls_faculty TYPE zfaculty.
+
+    ls_faculty-client      = sy-mandt.
+    ls_faculty-faculty_id  = 'F001'.
+    ls_faculty-name        = 'Dr. Asha Mehta'.
+    ls_faculty-email       = 'asha.mehta@college.edu'.
+    ls_faculty-phone       = '9876543210'.
+    ls_faculty-dept_id     = 'CSE'.
+    ls_faculty-designation = 'Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F002'.
+    ls_faculty-name        = 'Mr. Rajesh Sharma'.
+    ls_faculty-email       = 'rajesh.sharma@college.edu'.
+    ls_faculty-phone       = '9988776655'.
+    ls_faculty-dept_id     = 'ECE'.
+    ls_faculty-designation = 'Assistant Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F003'.
+    ls_faculty-name        = 'Ms. Kavita Patel'.
+    ls_faculty-email       = 'kavita.patel@college.edu'.
+    ls_faculty-phone       = '9123456789'.
+    ls_faculty-dept_id     = 'MECH'.
+    ls_faculty-designation = 'Lecturer'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F004'.
+    ls_faculty-name        = 'Dr. Amit Desai'.
+    ls_faculty-email       = 'amit.desai@college.edu'.
+    ls_faculty-phone       = '9012345678'.
+    ls_faculty-dept_id     = 'CIVIL'.
+    ls_faculty-designation = 'Associate Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F005'.
+    ls_faculty-name        = 'Mrs. Sneha Verma'.
+    ls_faculty-email       = 'sneha.verma@college.edu'.
+    ls_faculty-phone       = '9000011111'.
+    ls_faculty-dept_id     = 'IT'.
+    ls_faculty-designation = 'Assistant Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F006'.
+    ls_faculty-name        = 'Mr. Prashant Thakur'.
+    ls_faculty-email       = 'prashant.thakur@college.edu'.
+    ls_faculty-phone       = '9300456123'.
+    ls_faculty-dept_id     = 'CSD'.
+    ls_faculty-designation = 'Lecturer'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F007'.
+    ls_faculty-name        = 'Dr. Nidhi Joshi'.
+    ls_faculty-email       = 'nidhi.joshi@college.edu'.
+    ls_faculty-phone       = '8200345678'.
+    ls_faculty-dept_id     = 'CHEM'.
+    ls_faculty-designation = 'Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F008'.
+    ls_faculty-name        = 'Mr. Manish Gupta'.
+    ls_faculty-email       = 'manish.gupta@college.edu'.
+    ls_faculty-phone       = '7890456123'.
+    ls_faculty-dept_id     = 'EE'.
+    ls_faculty-designation = 'Associate Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F009'.
+    ls_faculty-name        = 'Mrs. Priya Shah'.
+    ls_faculty-email       = 'priya.shah@college.edu'.
+    ls_faculty-phone       = '7012345678'.
+    ls_faculty-dept_id     = 'BIOTECH'.
+    ls_faculty-designation = 'Assistant Professor'.
+    APPEND ls_faculty TO lt_faculty.
+
+    ls_faculty-faculty_id  = 'F010'.
+    ls_faculty-name        = 'Mr. Anil Rathod'.
+    ls_faculty-email       = 'anil.rathod@college.edu'.
+    ls_faculty-phone       = '9898989898'.
+    ls_faculty-dept_id     = 'MBA'.
+    ls_faculty-designation = 'Visiting Lecturer'.
+    APPEND ls_faculty TO lt_faculty.
+
+    DELETE FROM zfaculty.
+    " Insert into database
+    TRY.
+        INSERT zfaculty FROM TABLE @lt_faculty.
+        COMMIT WORK.
+        out->write( |{ lines( lt_faculty ) } records inserted successfully.| ).
+      CATCH cx_sy_open_sql_db INTO DATA(lx_sql).
+        out->write( |Insert error: { lx_sql->get_text( ) }| ).
+    ENDTRY.
+
+  ENDMETHOD.
+
+ENDCLASS.

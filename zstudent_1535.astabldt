@@ -1,0 +1,23 @@
+@EndUserText.label : 'Student Data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zstudent_1535 {
+
+  key client         : abap.clnt not null;
+  key student_id     : abap.char(10) not null;
+  name               : abap.char(100);
+  gender             : abap.char(1);
+  dob                : abap.dats;
+  email              : abap.char(100);
+  phone              : abap.char(15);
+  enrollment_no      : abap.numc(12);
+  dept_id            : abap.char(10);
+  semester           : abap.numc(2);
+  createdby          : abp_creation_user;
+  changedby          : abp_lastchange_user;
+  lastchangedat      : abp_lastchange_tstmpl;
+  locallastchangedat : abp_locinst_lastchange_tstmpl;
+
+}

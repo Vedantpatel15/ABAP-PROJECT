@@ -1,0 +1,33 @@
+CLASS zcl_functions_demo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_functions_demo IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA: lt_students TYPE TABLE OF zstudent_1535,
+          ls_student  TYPE zstudent_1535,
+          lv_domain   TYPE string.
+
+    SELECT * FROM zstudent_1535 INTO TABLE @lt_students.
+
+    LOOP AT lt_students INTO ls_student.
+      SPLIT ls_student-email AT '@' INTO DATA(lv_local) lv_domain.
+
+      out->write( |Student ID: { ls_student-student_id }| ).
+      out->write( |Name      : { ls_student-name }| ).
+      out->write( |Domain    : { lv_domain }| ).
+      out->write( '' ). " Blank line for spacing
+    ENDLOOP.
+
+  ENDMETHOD.
+
+ENDCLASS.

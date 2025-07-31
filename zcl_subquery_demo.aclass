@@ -1,0 +1,34 @@
+CLASS zcl_subquery_demo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_subquery_demo IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+  SELECT dept_id
+      FROM zstudent_1535
+      GROUP BY dept_id
+      HAVING COUNT(*) > 3
+      INTO TABLE @DATA(popular_depts).
+
+    SELECT * FROM zstudent_1535
+      FOR ALL ENTRIES IN @popular_depts
+      WHERE dept_id = @popular_depts-dept_id
+      INTO TABLE @DATA(result).
+
+    LOOP AT result INTO DATA(row).
+      out->write( row-student_id ).
+      out->write( row-name ).
+      out->write( row-dept_id ).
+    ENDLOOP.
+  ENDMETHOD.
+ENDCLASS.
